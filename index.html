@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sulaimon Ajibola Alao | Data Science & AI Automation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfolio of Sulaimon Ajibola Alao — Data Science & AI Automation, Machine Learning, and NLP."
+  />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f5f7ff',
+              100: '#e5ebff',
+              200: '#cdd8ff',
+              300: '#a8b7ff',
+              400: '#7d8bff',
+              500: '#6366f1',
+              600: '#4f46e5',
+            },
+          },
+          boxShadow: {
+            'soft-xl': '0 24px 60px rgba(15,23,42,0.18)',
+          },
+          borderRadius: {
+            '3xl': '1.75rem',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-18px)' },
+            },
+            tilt: {
+              '0%, 100%': { transform: 'rotate(-1deg)' },
+              '50%': { transform: 'rotate(1.5deg)' },
+            },
+          },
+          animation: {
+            float: 'float 12s ease-in-out infinite',
+            tilt: 'tilt 16s ease-in-out infinite',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+    }
+
+    /* Soft grid background */
+    .grid-bg::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -10;
+      background-image: linear-gradient(
+          to right,
+          rgba(148, 163, 184, 0.18) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          to bottom,
+          rgba(148, 163, 184, 0.18) 1px,
+          transparent 1px
+        );
+      background-size: 80px 80px;
+      opacity: 0.16;
+      pointer-events: none;
+    }
+
+    /* Glassmorphism helper */
+    .glass {
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.82),
+        rgba(248, 250, 252, 0.92)
+      );
+    }
+
+    .glass-soft {
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.88),
+        rgba(241, 245, 249, 0.95)
+      );
+    }
+  </style>
+</head>
+<body class="grid-bg bg-slate-50 text-slate-900 antialiased">
+  <!-- Background blobs -->
+  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute -top-32 -left-20 h-72 w-72 rounded-full bg-brand-200/70 blur-3xl animate-float"></div>
+    <div class="absolute top-40 -right-16 h-80 w-80 rounded-full bg-sky-200/70 blur-3xl animate-tilt"></div>
+    <div class="absolute bottom-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-amber-100/90 blur-3xl"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-30 border-b border-slate-200/70 bg-white/75 backdrop-blur-xl">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8">
+      <!-- Brand -->
+      <a href="#top" class="flex items-center gap-3">
+        <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-tr from-brand-500 via-sky-400 to-emerald-400 shadow-soft-xl text-white text-lg font-semibold">
+          SA
+        </div>
+        <div class="flex flex-col">
+          <span class="text-sm font-semibold sm:text-base">
+            Sulaimon Ajibola Alao
+          </span>
+          <span class="text-xs text-slate-500">
+            Data Science · AI · Automation
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
+        <a href="#about" class="relative transition hover:text-slate-900">
+          About
+          <span class="absolute left-0 top-6 h-0.5 w-0 rounded-full bg-brand-500 transition-all duration-200 group-hover:w-full"></span>
+        </a>
+        <a href="#skills" class="hover:text-slate-900">Skills</a>
+        <a href="#projects" class="hover:text-slate-900">Projects</a>
+        <a href="#contact" class="hover:text-slate-900">Contact</a>
+
+        <a
+          href="mailto:alaojibolas@gmail.com"
+          class="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-50 shadow-soft-xl hover:bg-slate-800"
+        >
+          <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(52,211,153,0.45)]"></span>
+          Available for collaboration
+        </a>
+      </nav>
+
+      <!-- Mobile nav button -->
+      <button
+        class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white/60 text-slate-700 shadow-sm md:hidden"
+        aria-label="Toggle navigation"
+        onclick="toggleMobileNav()"
+      >
+        <span id="menu-icon" class="text-xl">☰</span>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav
+      id="mobile-nav"
+      class="hidden border-t border-slate-200/80 bg-white/90 px-4 pb-4 pt-3 text-sm font-medium text-slate-700 md:hidden"
+    >
+      <div class="flex flex-col gap-2">
+        <a href="#about" class="rounded-full px-3 py-2 hover:bg-slate-100" onclick="toggleMobileNav()">About</a>
+        <a href="#skills" class="rounded-full px-3 py-2 hover:bg-slate-100" onclick="toggleMobileNav()">Skills</a>
+        <a href="#projects" class="rounded-full px-3 py-2 hover:bg-slate-100" onclick="toggleMobileNav()">Projects</a>
+        <a href="#contact" class="rounded-full px-3 py-2 hover:bg-slate-100" onclick="toggleMobileNav()">Contact</a>
+        <a
+          href="mailto:alaojibolas@gmail.com"
+          class="mt-1 inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-50 shadow-soft-xl"
+        >
+          <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(52,211,153,0.45)]"></span>
+          Let’s build together
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" class="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:px-6 sm:pt-14 lg:px-8">
+    <!-- HERO -->
+    <section class="grid gap-10 md:grid-cols-[minmax(0,3fr)_minmax(0,2.1fr)] md:items-center">
+      <!-- Hero left -->
+      <div>
+        <div class="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-slate-500 shadow-sm">
+          <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_0_5px_rgba(52,211,153,0.45)]"></span>
+          Data Science · AI · Automation
+        </div>
+
+        <h1 class="mt-5 text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl lg:text-[2.8rem]">
+          Turning
+          <span class="bg-gradient-to-r from-brand-600 via-sky-500 to-emerald-500 bg-clip-text text-transparent">
+            data
+          </span>
+          into intelligent &amp; automated decisions.
+        </h1>
+
+        <p class="mt-4 max-w-xl text-sm text-slate-600 sm:text-base">
+          I’m <span class="font-semibold text-slate-900">Sulaimon Ajibola Alao</span>,
+          a Data Science &amp; AI professional focused on
+          <span class="font-semibold">loan eligibility scoring</span>,
+          <span class="font-semibold">fraud detection</span>,
+          <span class="font-semibold">Q&amp;A systems</span>,
+          <span class="font-semibold">text summarization</span>, and
+          <span class="font-semibold">end-to-end automation pipelines</span>.
+        </p>
+
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <a
+            href="#projects"
+            class="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-brand-600 via-brand-500 to-sky-500 px-6 py-2.5 text-sm font-semibold text-white shadow-soft-xl hover:from-brand-500 hover:to-sky-500"
+          >
+            View Projects
+            <span class="text-lg">↗</span>
+          </a>
+
+          <a
+            href="mailto:alaojibolas@gmail.com"
+            class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/80 px-5 py-2.5 text-sm font-medium text-slate-800 shadow-sm hover:border-brand-400 hover:bg-slate-50"
+          >
+            Let’s Work Together
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/sulaimon-ajibola-alao-a8782539b/"
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-medium text-slate-700 shadow-sm hover:border-brand-400"
+          >
+            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-500 text-[0.85rem] font-semibold text-white">
+              in
+            </span>
+            LinkedIn Profile
+          </a>
+        </div>
+
+        <dl class="mt-7 grid gap-5 text-xs text-slate-600 sm:grid-cols-3 sm:text-sm">
+          <div>
+            <dt class="uppercase tracking-[0.2em] text-[0.65rem] text-slate-500">Focus</dt>
+            <dd class="mt-1 font-medium">
+              Machine Learning · NLP · Automation
+            </dd>
+          </div>
+          <div>
+            <dt class="uppercase tracking-[0.2em] text-[0.65rem] text-slate-500">Email</dt>
+            <dd class="mt-1 font-medium text-brand-600">
+              <a href="mailto:alaojibolas@gmail.com">
+                alaojibolas@gmail.com
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="uppercase tracking-[0.2em] text-[0.65rem] text-slate-500">Collaboration</dt>
+            <dd class="mt-1 font-medium">
+              Remote &amp; On-site friendly
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Hero right card -->
+      <aside class="relative glass rounded-3xl border border-slate-200/80 p-5 shadow-soft-xl">
+        <div class="pointer-events-none absolute -top-12 -right-10 h-32 w-32 rounded-full bg-brand-200/60 blur-2xl"></div>
+        <div class="pointer-events-none absolute -bottom-14 left-10 h-32 w-32 rounded-full bg-emerald-200/60 blur-2xl"></div>
+
+        <div class="relative space-y-5">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <div class="inline-flex items-center gap-2 rounded-full bg-slate-900 text-slate-50 px-3 py-1 text-[0.7rem] font-semibold tracking-[0.16em] uppercase">
+                <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(52,211,153,0.6)]"></span>
+                Live AI Automation Snapshot
+              </div>
+              <p class="mt-3 text-xs text-slate-600">
+                A typical stack I use to build <span class="font-semibold text-slate-900">data-driven, automated ML systems</span>.
+              </p>
+            </div>
+
+            <div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white/60 text-[0.7rem] font-semibold uppercase text-slate-500">
+              AI
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-2 text-[0.7rem]">
+            <span class="rounded-full bg-slate-900 text-slate-50 px-3 py-1">Python · SQL</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-700">Pandas · NumPy</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-700">Scikit-learn</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-700">NLP · LLM APIs</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-700">Automation Pipelines</span>
+          </div>
+
+          <div class="grid gap-3 text-xs sm:grid-cols-3">
+            <div class="glass-soft rounded-2xl border border-slate-200 px-3 py-3">
+              <div class="text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
+                Models Deployed
+              </div>
+              <div class="mt-1 text-lg font-semibold text-slate-900">
+                7+
+              </div>
+              <p class="mt-1 text-[0.7rem] text-slate-500">
+                Classification, NLP &amp; forecasting prototypes and pipelines.
+              </p>
+            </div>
+            <div class="glass-soft rounded-2xl border border-slate-200 px-3 py-3">
+              <div class="text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
+                Workflow Automation
+              </div>
+              <div class="mt-1 text-lg font-semibold text-slate-900">
+                80%+
+              </div>
+              <p class="mt-1 text-[0.7rem] text-slate-500">
+                Manual steps replaced with scripts, jobs &amp; triggers.
+              </p>
+            </div>
+            <div class="glass-soft rounded-2xl border border-slate-200 px-3 py-3">
+              <div class="text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
+                Data Volume
+              </div>
+              <div class="mt-1 text-lg font-semibold text-slate-900">
+                1M+ rows
+              </div>
+              <p class="mt-1 text-[0.7rem] text-slate-500">
+                Processed across risk, fraud &amp; analytics projects.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-3 border-t border-dashed border-slate-200 pt-3 text-xs text-slate-600 sm:flex-row sm:items-center sm:justify-between">
+            <p>
+              Currently exploring
+              <span class="font-semibold text-slate-900">LLM-powered agents</span> &
+              <span class="font-semibold text-slate-900">real-time anomaly detection</span>.
+            </p>
+            <span class="inline-flex items-center justify-center rounded-full border border-emerald-300 bg-emerald-50 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-emerald-700">
+              Open to Opportunities
+            </span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="mt-16 scroll-mt-24 sm:mt-20">
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+            About
+          </p>
+          <h2 class="mt-1 text-xl font-semibold text-slate-900 sm:text-2xl">
+            Who I am
+          </h2>
+        </div>
+        <p class="max-w-md text-xs text-slate-600 sm:text-sm">
+          I combine <span class="font-semibold text-slate-900">data science</span>,
+          <span class="font-semibold text-slate-900">AI</span>, and
+          <span class="font-semibold text-slate-900">automation</span> to build systems
+          that don’t just generate insights — they act on them.
+        </p>
+      </div>
+
+      <div class="mt-7 grid gap-6 md:grid-cols-[minmax(0,3fr)_minmax(0,2.1fr)]">
+        <!-- About text -->
+        <article class="glass-soft rounded-3xl border border-slate-200 p-6 shadow-soft-xl text-sm text-slate-600">
+          <p>
+            I’m <span class="font-semibold text-slate-900">Sulaimon Ajibola Alao</span>, a
+            Data Science &amp; AI professional focused on building
+            <span class="font-semibold text-slate-900">intelligent automation</span>.
+            I enjoy transforming raw data into production-oriented systems that
+            score risk, flag anomalies, answer questions, and summarize information.
+          </p>
+          <p class="mt-3">
+            My experience spans
+            <span class="font-semibold text-slate-900">loan eligibility models</span>,
+            <span class="font-semibold text-slate-900">fraud detection pipelines</span>,
+            <span class="font-semibold text-slate-900">Q&amp;A assistants</span>, and
+            <span class="font-semibold text-slate-900">text summarizers</span>, using
+            both classical ML and modern NLP / LLM techniques.
+          </p>
+          <p class="mt-3">
+            I emphasize <span class="font-semibold text-slate-900">end-to-end ownership</span>:
+            data cleaning, feature engineering, model training, evaluation, and
+            integrating models into automated workflows.
+          </p>
+
+          <div class="mt-4 rounded-2xl border border-dashed border-brand-300 bg-brand-50/80 px-4 py-3 text-xs text-slate-700">
+            <span class="font-semibold text-brand-700">What drives me:</span>
+            building explainable, reliable, and automated AI systems that solve
+            real problems — not just toy datasets.
+          </div>
+        </article>
+
+        <!-- About meta -->
+        <div class="grid gap-4 text-xs text-slate-700 sm:grid-cols-2">
+          <div class="glass-soft rounded-2xl border border-slate-200 p-4">
+            <h3 class="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-slate-500">
+              Core Domains
+            </h3>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="rounded-full bg-slate-900 px-3 py-1 text-[0.7rem] font-medium text-slate-50">
+                Supervised Learning
+              </span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-[0.7rem]">
+                NLP &amp; LLMs
+              </span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-[0.7rem]">
+                Anomaly Detection
+              </span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-[0.7rem]">
+                Predictive Modeling
+              </span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-[0.7rem]">
+                Automation &amp; Agents
+              </span>
+            </div>
+          </div>
+
+          <div class="glass-soft rounded-2xl border border-slate-200 p-4">
+            <h3 class="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-slate-500">
+              Tools &amp; Tech
+            </h3>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-[0.7rem]">
+                Python · SQL
+              </span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-[0.7rem]">
+                Pandas · NumPy
+              </span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-[0.7rem]">
+                Scikit-learn
+              </span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-[0.7rem]">
+                Matplotlib · Seaborn
+              </span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-[0.7rem]">
+                Transformers · NLP APIs
+              </span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-[0.7rem]">
+                Git · GitHub
+              </span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-[0.7rem]">
+                REST API Integration
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="mt-16 scroll-mt-24 sm:mt-20">
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+            Skills
+          </p>
+          <h2 class="mt-1 text-xl font-semibold text-slate-900 sm:text-2xl">
+            What I work with
+          </h2>
+        </div>
+        <p class="max-w-md text-xs text-slate-600 sm:text-sm">
+          From <span class="font-semibold text-slate-900">data wrangling</span> and
+          <span class="font-semibold text-slate-900">machine learning</span> to
+          <span class="font-semibold text-slate-900">NLP</span> and
+          <span class="font-semibold text-slate-900">automation</span>.
+        </p>
+      </div>
+
+      <div class="mt-7 grid gap-5 md:grid-cols-3">
+        <!-- Card 1 -->
+        <div class="glass-soft rounded-3xl border border-slate-200 p-5 text-sm text-slate-600 shadow-soft-xl">
+          <h3 class="text-sm font-semibold text-slate-900">
+            Data Science &amp; Analytics
+          </h3>
+          <p class="mt-2 text-xs">
+            Working with structured &amp; unstructured data to uncover patterns and drive decisions.
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2 text-[0.7rem]">
+            <span class="rounded-full bg-slate-900 px-3 py-1 text-slate-50">
+              Python (Pandas, NumPy)
+            </span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">EDA</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Feature Engineering</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Data Cleaning</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Statistical Analysis</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Visualisation</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-soft rounded-3xl border border-slate-200 p-5 text-sm text-slate-600 shadow-soft-xl">
+          <h3 class="text-sm font-semibold text-slate-900">
+            Machine Learning &amp; AI
+          </h3>
+          <p class="mt-2 text-xs">
+            Building and evaluating models for classification, regression, and anomalies.
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2 text-[0.7rem]">
+            <span class="rounded-full bg-slate-900 px-3 py-1 text-slate-50">
+              Scikit-learn
+            </span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Supervised &amp; Unsupervised</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Tree-based models</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Cross-validation</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Hyperparameter tuning</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Model metrics &amp; explainability</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-soft rounded-3xl border border-slate-200 p-5 text-sm text-slate-600 shadow-soft-xl">
+          <h3 class="text-sm font-semibold text-slate-900">
+            NLP &amp; LLMs
+          </h3>
+          <p class="mt-2 text-xs">
+            Language-aware systems that answer questions, classify text and summarize content.
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2 text-[0.7rem]">
+            <span class="rounded-full bg-slate-900 px-3 py-1 text-slate-50">
+              Text preprocessing
+            </span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Text Classification</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Q&amp;A Systems</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Summarization</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">TF-IDF / Embeddings</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">LLM APIs</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="glass-soft rounded-3xl border border-slate-200 p-5 text-sm text-slate-600 shadow-soft-xl">
+          <h3 class="text-sm font-semibold text-slate-900">
+            Automation &amp; MLOps Mindset
+          </h3>
+          <p class="mt-2 text-xs">
+            Turning models &amp; notebooks into repeatable, automated workflows.
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2 text-[0.7rem]">
+            <span class="rounded-full bg-slate-900 px-3 py-1 text-slate-50">
+              ETL Pipelines
+            </span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Task automation (scripts)</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Batch inference</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">REST APIs</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Scheduling</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Version Control (Git)</span>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="glass-soft rounded-3xl border border-slate-200 p-5 text-sm text-slate-600 shadow-soft-xl">
+          <h3 class="text-sm font-semibold text-slate-900">
+            Databases &amp; Queries
+          </h3>
+          <p class="mt-2 text-xs">
+            Extracting and transforming data from relational sources.
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2 text-[0.7rem]">
+            <span class="rounded-full bg-slate-900 px-3 py-1 text-slate-50">
+              SQL
+            </span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Joins &amp; Window Functions</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Aggregations</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Reporting queries</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Data modeling basics</span>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="glass-soft rounded-3xl border border-slate-200 p-5 text-sm text-slate-600 shadow-soft-xl">
+          <h3 class="text-sm font-semibold text-slate-900">
+            Soft Skills
+          </h3>
+          <p class="mt-2 text-xs">
+            Communicating clearly and aligning technical work with business needs.
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2 text-[0.7rem]">
+            <span class="rounded-full bg-slate-100 px-3 py-1">Problem solving</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Stakeholder communication</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Documentation</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Collaboration</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Continuous learning</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="mt-16 scroll-mt-24 sm:mt-20">
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+            Projects
+          </p>
+          <h2 class="mt-1 text-xl font-semibold text-slate-900 sm:text-2xl">
+            Selected Work
+          </h2>
+        </div>
+        <p class="max-w-md text-xs text-slate-600 sm:text-sm">
+          From <span class="font-semibold text-slate-900">loan eligibility</span> and
+          <span class="font-semibold text-slate-900">fraud detection</span> to
+          <span class="font-semibold text-slate-900">Q&amp;A</span>,
+          <span class="font-semibold text-slate-900">summarization</span>, and
+          <span class="font-semibold text-slate-900">automation pipelines</span>.
+        </p>
+      </div>
+
+      <div class="mt-7 grid gap-5 md:grid-cols-2">
+        <!-- Loan Eligibility -->
+        <article class="glass-soft rounded-3xl border border-slate-200 p-5 shadow-soft-xl">
+          <div class="flex items-center justify-between gap-3">
+            <div>
+              <p class="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                Loan Eligibility Prediction
+              </p>
+              <h3 class="mt-1 text-sm font-semibold text-slate-900 sm:text-base">
+                Automated Loan Eligibility Scoring
+              </h3>
+            </div>
+            <span class="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-emerald-700">
+              Risk · ML
+            </span>
+          </div>
+          <p class="mt-3 text-xs text-slate-600">
+            Built a machine learning model to
+            <span class="font-semibold text-slate-900">predict loan eligibility</span>
+            using customer profile, income, and credit history. Outputs an
+            eligibility score and decision flag that can plug into a loan
+            application pipeline.
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2 text-[0.7rem]">
+            <span class="rounded-full bg-slate-900 px-3 py-1 text-slate-50">Python</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Pandas</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Scikit-learn</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Classification</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Model Evaluation</span>
+          </div>
+          <div class="mt-4 flex items-center justify-between text-[0.7rem] text-slate-600">
+            <span class="font-medium">Production-ready logic</span>
+            <span class="text-slate-500">GitHub link: Coming soon</span>
+          </div>
+        </article>
+
+        <!-- Fraud Detection -->
+        <article class="glass-soft rounded-3xl border border-slate-200 p-5 shadow-soft-xl">
+          <div class="flex items-center justify-between gap-3">
+            <div>
+              <p class="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                Fraud Detection System
+              </p>
+              <h3 class="mt-1 text-sm font-semibold text-slate-900 sm:text-base">
+                Transaction Fraud Detection
+              </h3>
+            </div>
+            <span class="inline-flex items-center rounded-full bg-rose-50 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-rose-700">
+              Anomaly
+            </span>
+          </div>
+          <p class="mt-3 text-xs text-slate-600">
+            Designed a <span class="font-semibold text-slate-900">fraud detection model</span>
+            that flags suspicious transactions in near-real time. Handled
+            <span class="font-semibold text-slate-900">highly imbalanced data</span>
+            and tuned for high recall while controlling false positives.
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2 text-[0.7rem]">
+            <span class="rounded-full bg-slate-900 px-3 py-1 text-slate-50">Python</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Scikit-learn</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">SMOTE</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">ROC-AUC</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Anomaly Detection</span>
+          </div>
+          <div class="mt-4 flex items-center justify-between text-[0.7rem] text-slate-600">
+            <span class="font-medium">Automation-focused</span>
+            <span class="text-slate-500">GitHub link: Coming soon</span>
+          </div>
+        </article>
+
+        <!-- Q&A System -->
+        <article class="glass-soft rounded-3xl border border-slate-200 p-5 shadow-soft-xl">
+          <div class="flex items-center justify-between gap-3">
+            <div>
+              <p class="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                Q&amp;A Assistant
+              </p>
+              <h3 class="mt-1 text-sm font-semibold text-slate-900 sm:text-base">
+                Domain-Specific Q&amp;A System
+              </h3>
+            </div>
+            <span class="inline-flex items-center rounded-full bg-sky-50 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-sky-700">
+              NLP
+            </span>
+          </div>
+          <p class="mt-3 text-xs text-slate-600">
+            Implemented an <span class="font-semibold text-slate-900">intelligent Q&amp;A assistant</span>
+            that answers questions based on internal documents. Combines retrieval
+            (TF-IDF / embeddings) with LLM responses to automate repetitive support
+            tasks.
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2 text-[0.7rem]">
+            <span class="rounded-full bg-slate-900 px-3 py-1 text-slate-50">NLP</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">TF-IDF / Embeddings</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Information Retrieval</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">LLM APIs</span>
+          </div>
+          <div class="mt-4 flex items-center justify-between text-[0.7rem] text-slate-600">
+            <span class="font-medium">Prototype deployed</span>
+            <span class="text-slate-500">GitHub link: Coming soon</span>
+          </div>
+        </article>
+
+        <!-- Text Summarization -->
+        <article class="glass-soft rounded-3xl border border-slate-200 p-5 shadow-soft-xl">
+          <div class="flex items-center justify-between gap-3">
+            <div>
+              <p class="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                Text Summarization
+              </p>
+              <h3 class="mt-1 text-sm font-semibold text-slate-900 sm:text-base">
+                Automatic Text Summarizer
+              </h3>
+            </div>
+            <span class="inline-flex items-center rounded-full bg-amber-50 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-amber-700">
+              NLP
+            </span>
+          </div>
+          <p class="mt-3 text-xs text-slate-600">
+            Built an <span class="font-semibold text-slate-900">automated summarization tool</span>
+            that converts long documents into concise summaries. Compared
+            extractive and abstractive approaches and exposed a simple interface
+            for non-technical users.
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2 text-[0.7rem]">
+            <span class="rounded-full bg-slate-900 px-3 py-1 text-slate-50">Python</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Transformers / LLM</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">TextRank / BERT-style</span>
+          </div>
+          <div class="mt-4 flex items-center justify-between text-[0.7rem] text-slate-600">
+            <span class="font-medium">End-user focused</span>
+            <span class="text-slate-500">GitHub link: Coming soon</span>
+          </div>
+        </article>
+
+        <!-- Customer Churn -->
+        <article class="glass-soft rounded-3xl border border-slate-200 p-5 shadow-soft-xl">
+          <div class="flex items-center justify-between gap-3">
+            <div>
+              <p class="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                Churn Prediction
+              </p>
+              <h3 class="mt-1 text-sm font-semibold text-slate-900 sm:text-base">
+                Customer Churn Prediction Engine
+              </h3>
+            </div>
+            <span class="inline-flex items-center rounded-full bg-violet-50 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-violet-700">
+              Retention
+            </span>
+          </div>
+          <p class="mt-3 text-xs text-slate-600">
+            Built a <span class="font-semibold text-slate-900">churn prediction model</span>
+            (telecom-style dataset) to identify high-risk customers. Integrated as
+            an automated scoring step to trigger retention campaigns.
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2 text-[0.7rem]">
+            <span class="rounded-full bg-slate-900 px-3 py-1 text-slate-50">Python</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Pandas</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Scikit-learn</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Feature Engineering</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Automation Hooks</span>
+          </div>
+          <div class="mt-4 flex items-center justify-between text-[0.7rem] text-slate-600">
+            <span class="font-medium">Decision-support</span>
+            <span class="text-slate-500">GitHub link: Coming soon</span>
+          </div>
+        </article>
+
+        <!-- Sales Forecasting -->
+        <article class="glass-soft rounded-3xl border border-slate-200 p-5 shadow-soft-xl">
+          <div class="flex items-center justify-between gap-3">
+            <div>
+              <p class="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                Time Series Automation
+              </p>
+              <h3 class="mt-1 text-sm font-semibold text-slate-900 sm:text-base">
+                Sales Demand Forecasting Pipeline
+              </h3>
+            </div>
+            <span class="inline-flex items-center rounded-full bg-teal-50 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-teal-700">
+              Forecast
+            </span>
+          </div>
+          <p class="mt-3 text-xs text-slate-600">
+            Developed an <span class="font-semibold text-slate-900">end-to-end forecasting pipeline</span>
+            for predicting product sales: automated ETL, feature generation
+            (lags/rolling stats), training and scheduled forecasts for inventory planning.
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2 text-[0.7rem]">
+            <span class="rounded-full bg-slate-900 px-3 py-1 text-slate-50">Python</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Time Series</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Forecasting Models</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">ETL &amp; Automation</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Scheduling</span>
+          </div>
+          <div class="mt-4 flex items-center justify-between text-[0.7rem] text-slate-600">
+            <span class="font-medium">Fully automated</span>
+            <span class="text-slate-500">GitHub link: Coming soon</span>
+          </div>
+        </article>
+
+        <!-- Marketing Automation -->
+        <article class="glass-soft rounded-3xl border border-slate-200 p-5 shadow-soft-xl">
+          <div class="flex items-center justify-between gap-3">
+            <div>
+              <p class="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                Data Pipeline &amp; Monitoring
+              </p>
+              <h3 class="mt-1 text-sm font-semibold text-slate-900 sm:text-base">
+                Marketing Analytics Automation
+              </h3>
+            </div>
+            <span class="inline-flex items-center rounded-full bg-lime-50 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-lime-700">
+              ETL
+            </span>
+          </div>
+          <p class="mt-3 text-xs text-slate-600">
+            Designed an <span class="font-semibold text-slate-900">automated data pipeline</span>
+            ingesting campaign performance data, cleaning and aggregating it to
+            refresh dashboards, plus <span class="font-semibold text-slate-900">anomaly alerts</span>
+            for sudden metric drops.
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2 text-[0.7rem]">
+            <span class="rounded-full bg-slate-900 px-3 py-1 text-slate-50">Python</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">ETL</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Automation Scripts</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Analytics</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1">Alerting Logic</span>
+          </div>
+          <div class="mt-4 flex items-center justify-between text-[0.7rem] text-slate-600">
+            <span class="font-medium">Automation-centric</span>
+            <span class="text-slate-500">GitHub link: Coming soon</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="mt-16 scroll-mt-24 sm:mt-20">
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+            Contact
+          </p>
+          <h2 class="mt-1 text-xl font-semibold text-slate-900 sm:text-2xl">
+            Let’s build something
+          </h2>
+        </div>
+        <p class="max-w-md text-xs text-slate-600 sm:text-sm">
+          Open to roles, freelance work, and collaborations in
+          <span class="font-semibold text-slate-900">data science</span>,
+          <span class="font-semibold text-slate-900">AI</span>, and
+          <span class="font-semibold text-slate-900">automation</span>.
+        </p>
+      </div>
+
+      <div class="mt-7 grid gap-6 md:grid-cols-[minmax(0,2.1fr)_minmax(0,3fr)]">
+        <!-- Contact details -->
+        <div class="glass-soft rounded-3xl border border-slate-200 p-5 text-sm text-slate-600 shadow-soft-xl">
+          <h3 class="text-sm font-semibold text-slate-900">
+            Get in touch
+          </h3>
+          <p class="mt-2 text-xs">
+            Share a short description of your project or role and I’ll respond as
+            soon as possible.
+          </p>
+          <ul class="mt-3 space-y-2 text-xs">
+            <li>
+              <span class="font-semibold text-slate-900">Email:</span>
+              <a
+                href="mailto:alaojibolas@gmail.com"
+                class="ml-1 text-brand-600 hover:text-brand-500"
+              >
+                alaojibolas@gmail.com
+              </a>
+            </li>
+            <li>
+              <span class="font-semibold text-slate-900">LinkedIn:</span>
+              <a
+                href="https://www.linkedin.com/in/sulaimon-ajibola-alao-a8782539b/"
+                target="_blank"
+                rel="noreferrer"
+                class="ml-1 text-brand-600 hover:text-brand-500"
+              >
+                /sulaimon-ajibola-alao
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact form (static demo) -->
+        <form
+          class="glass-soft rounded-3xl border border-slate-200 p-5 text-sm text-slate-600 shadow-soft-xl"
+          onsubmit="event.preventDefault(); alert('This is a static demo form. Connect it to your backend, email service, or automation tool.');"
+        >
+          <div class="grid gap-3 sm:grid-cols-2">
+            <div>
+              <label for="name" class="text-xs font-medium text-slate-700">
+                Name
+              </label>
+              <input
+                id="name"
+                type="text"
+                required
+                class="mt-1 w-full rounded-xl border border-slate-200 bg-white/90 px-3 py-2 text-xs text-slate-900 shadow-sm outline-none ring-brand-200/70 transition focus:border-brand-400 focus:ring"
+                placeholder="Your name"
+              />
+            </div>
+            <div>
+              <label for="email" class="text-xs font-medium text-slate-700">
+                Email
+              </label>
+              <input
+                id="email"
+                type="email"
+                required
+                class="mt-1 w-full rounded-xl border border-slate-200 bg-white/90 px-3 py-2 text-xs text-slate-900 shadow-sm outline-none ring-brand-200/70 transition focus:border-brand-400 focus:ring"
+                placeholder="your@email.com"
+              />
+            </div>
+          </div>
+
+          <div class="mt-3">
+            <label for="message" class="text-xs font-medium text-slate-700">
+              Project / Message
+            </label>
+            <textarea
+              id="message"
+              required
+              rows="4"
+              class="mt-1 w-full rounded-xl border border-slate-200 bg-white/90 px-3 py-2 text-xs text-slate-900 shadow-sm outline-none ring-brand-200/70 transition focus:border-brand-400 focus:ring"
+              placeholder="Tell me briefly about your dataset, problem, or role..."
+            ></textarea>
+            <p class="mt-1 text-[0.68rem] text-slate-500">
+              This form currently shows an alert. Replace it with your own backend or
+              form service (e.g. Formspree, EmailJS, API) to make it live.
+            </p>
+          </div>
+
+          <button
+            type="submit"
+            class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-600 via-brand-500 to-sky-500 px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.16em] text-white shadow-soft-xl hover:from-brand-500 hover:to-sky-500"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200/70 bg-white/70 py-4 text-[0.7rem] text-slate-500 backdrop-blur-lg">
+    <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-2 px-4 sm:flex-row sm:items-center sm:px-6 lg:px-8">
+      <p>
+        © <span id="year"></span> Sulaimon Ajibola Alao. All rights reserved.
+      </p>
+      <div class="flex flex-wrap items-center gap-3">
+        <a href="#top" class="hover:text-brand-500">Back to top ↑</a>
+        <a
+          href="https://www.linkedin.com/in/sulaimon-ajibola-alao-a8782539b/"
+          target="_blank"
+          rel="noreferrer"
+          class="hover:text-brand-500"
+        >
+          LinkedIn
+        </a>
+        <a href="mailto:alaojibolas@gmail.com" class="hover:text-brand-500">
+          Email
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    function toggleMobileNav() {
+      const nav = document.getElementById("mobile-nav");
+      const icon = document.getElementById("menu-icon");
+      const isHidden = nav.classList.contains("hidden");
+      if (isHidden) {
+        nav.classList.remove("hidden");
+        icon.textContent = "✕";
+      } else {
+        nav.classList.add("hidden");
+        icon.textContent = "☰";
+      }
+    }
+  </script>
+</body>
+</html>
